@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Command">
       <UniqueIdentifier>{b70c5890-22b3-4e35-a25e-66263b0d42e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Process">
+      <UniqueIdentifier>{6195f7f9-97f1-4953-9e39-923284ef7f96}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

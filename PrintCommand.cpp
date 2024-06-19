@@ -16,8 +16,13 @@ void PrintCommand::execute(int core) {
     
     // output folder must exist!!!
     if (output.is_open()) {
-        // Get time here
-        output << "time goes here " 
+        auto timestamp = time(nullptr);
+        struct tm timeInfo;
+        localtime_s(&timeInfo, &timestamp);
+        char buffer[80];
+        strftime(buffer, sizeof(buffer), "(%D %r)", &timeInfo);
+
+        output << buffer << " "
             << "Core:" << core << " "
             << "\"" << this->_message << "\""
             << std::endl;
