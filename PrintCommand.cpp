@@ -6,6 +6,8 @@
 #include <string>
 #include <thread>
 
+#define MS_DELAY 500
+
 
 typedef std::string String;
 
@@ -31,5 +33,5 @@ void PrintCommand::execute(int core) {
     else {
         std::cerr << filename << " failed to open" << std::endl;
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::this_thread::sleep_for(std::chrono::milliseconds(MS_DELAY));
 }
