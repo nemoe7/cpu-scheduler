@@ -11,7 +11,7 @@
 
 class Process {
 public:
-    Process(int pid, std::string name, bool filler = true);
+    Process(int pid, std::string name, bool filler = false);
     ~Process() = default;
 
     void execute();

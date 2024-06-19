@@ -1,13 +1,15 @@
 #include "Process.h"
 
-#include "ICommand.h"
+#include <fstream>
 #include <iostream>
 #include <memory>
 #include <string>
 #include "PrintCommand.h"
 
 
-Process::Process(int pid, std::string name, bool filler) : _pid(pid), _name(name) {
+typedef std::string String;
+
+Process::Process(int pid, String name, bool filler) : _pid(pid), _name(name) {
     if (filler) {
         for (int i = 0; i < 100; i++) {
             this->_commandList.push_back(
@@ -20,6 +22,18 @@ Process::Process(int pid, std::string name, bool filler) : _pid(pid), _name(name
 }
 
 void Process::execute() {
+    if (this->_commandCounter == 0) {
+        String filename = ".\\output\\print_" + std::to_string(this->_pid) + ".txt";
+        std::ofstream output;
+        output.open(filename, std::ios::out);
+        if (output.is_open()) {
+            output << "Process name: " << this->_name << std::endl
+                << "Logs:" << std::endl
+                << std::endl;
+            output.close();
+        }
+    }
+
     if (!this->hasFinished()) {
         this->_commandList.at(_commandCounter)->execute(this->_cpuCoreID);
         this->_commandCounter++;
