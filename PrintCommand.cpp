@@ -6,7 +6,7 @@
 #include <string>
 #include <thread>
 
-#define MS_DELAY 500
+#define MS_DELAY 50
 
 
 typedef std::string String;
