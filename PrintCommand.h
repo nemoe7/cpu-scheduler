@@ -1,18 +1,22 @@
 #pragma once
+#ifndef PRINTCOMMAND_H
+#define PRINTCOMMAND_H
+
 #include "ICommand.h"
-#include <memory>
+#include <string>
 
 
-class PrintCommand :
-    public ICommand {
-    PrintCommand(int pid) : _pid(pid) {};
+class PrintCommand : public ICommand {
+public:
+    PrintCommand(std::string message, int pid) : _message(message), _pid(pid) {};
     ~PrintCommand() = default;
 
-    void execute();
+    void execute(int core);
 
     int _pid;
     CommandType _type = PRINT;
 
-    std::shared_ptr<std::ostream> _output;
+    std::string _message;
 };
 
+#endif // !PRINTCOMMAND_H

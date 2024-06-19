@@ -1,8 +1,30 @@
 #include "PrintCommand.h"
 #include <chrono>
+#include <ctime>
+#include <fstream>
+#include <iostream>
+#include <string>
 #include <thread>
 
-void PrintCommand::execute() {
-    //TODO
+
+typedef std::string String;
+
+void PrintCommand::execute(int core) {
+    String filename = ".\\output\\print_" + std::to_string(this->_pid) + ".txt";
+    std::ofstream output;
+    output.open(filename, std::ios::out | std::ios::app);
+    
+    // output folder must exist!!!
+    if (output.is_open()) {
+        // Get time here
+        output << "time goes here " 
+            << "Core:" << core << " "
+            << "\"" << this->_message << "\""
+            << std::endl;
+        output.close();
+    }
+    else {
+        std::cerr << filename << " failed to open" << std::endl;
+    }
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 }

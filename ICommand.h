@@ -9,10 +9,10 @@ enum CommandType {
 
 class ICommand {
 public:
-    virtual void execute() = 0;
+    virtual void execute(int core) = 0;
 
-    int pid;
-    CommandType type;
+    int _pid;
+    CommandType _type;
 };
 
 #endif // !ICOMMAND_H
