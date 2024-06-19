@@ -30,6 +30,9 @@
     <ClCompile Include="PrintCommand.cpp">
       <Filter>Source Files\Command</Filter>
     </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Source Files\Process</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ICommand.h">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="PrintCommand.h">
       <Filter>Source Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Source Files\Process</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

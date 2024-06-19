@@ -130,10 +130,12 @@
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="PrintCommand.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Process.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="PrintCommand.h" />
+    <ClInclude Include="Process.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
