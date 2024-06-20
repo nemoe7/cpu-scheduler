@@ -10,7 +10,7 @@
 typedef std::string String;
 
 Process::Process(int pid, String name, bool filler) : _pid(pid), _name(name) {
-    String filename = ".\\output\\print_" + std::to_string(this->_pid) + ".txt";
+    String filename = ".\\output\\" + this->_name + ".txt";
     std::ofstream output;
     output.open(filename, std::ios::out);
     if (output.is_open()) {
