@@ -1,5 +1,10 @@
 #include "Scheduler.h"
 
+#include <memory>
+
+#include "CPU.h"
+#include "Process.h"
+
 
 Scheduler* Scheduler::_ptr = nullptr;
 
