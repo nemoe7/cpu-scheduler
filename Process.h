@@ -17,6 +17,10 @@ public:
     void execute();
     bool hasFinished();
 
+    std::string getName() const { return _name; };
+    int getCommandCounter() const { return _commandCounter; };
+    int getCommandListSize() const { return this->_commandList.size(); };
+
     void setCPUCoreID(int cpuCoreID);
 
 private:

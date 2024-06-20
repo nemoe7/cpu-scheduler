@@ -48,6 +48,24 @@ void Scheduler::demo() {
 }
 
 void Scheduler::printStatus() {
+    for (int i = 0; i < 38; i++) {
+        std::cout << "-";
+    }
+    std::cout << std::endl;
+    std::cout << "Running processes:" << std::endl;
+    for (int i = 0; i < this->_cpuList.size(); i++) {
+        std::shared_ptr<CPU> cpu = this->_cpuList.at(i);
+        if (cpu->isReady()) {
+            std::cout << "Idle\tCore: " << std::to_string(cpu->getId()) << std::endl;
+        }
+        else {
+            std::string process = cpu->getProcessName();
+            std::string commandCounter = std::to_string(cpu->getProcessCommandCounter());
+            std::string totalCommands = std::to_string(cpu->getProcessCommandListSize());
+            std::string cpuID = std::to_string(cpu->getId());
+            std::cout << process + "\t" + "date\t" + "Core: " + cpuID + "\t" + commandCounter + " / " + totalCommands << std::endl;
+        }
+    }
 }
 
 Scheduler::Scheduler() {

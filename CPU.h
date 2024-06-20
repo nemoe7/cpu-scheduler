@@ -3,6 +3,7 @@
 #define CPU_H
 
 #include <memory>
+#include <string>
 
 #include "Process.h"
 
@@ -12,6 +13,10 @@ public:
     CPU();
     ~CPU() = default;
     void setProcess(std::shared_ptr<Process> process);
+    int getId() const { return _id; };
+    std::string getProcessName() const { return this->_process->getName(); };
+    int getProcessCommandCounter() const { return this->_process->getCommandCounter(); };
+    int getProcessCommandListSize() const { return this->_process->getCommandListSize(); };
 
     bool isReady() const { return _ready; };
 
