@@ -1,5 +1,8 @@
 #include "Scheduler.h"
 
+#include <ctime>
+#include <chrono>
+#include <iostream>
 #include <memory>
 #include <string>
 #include <thread>
@@ -7,7 +10,7 @@
 #include "CPU.h"
 #include "Process.h"
 
-#include <iostream>
+
 Scheduler* Scheduler::_ptr = nullptr;
 
 Scheduler* Scheduler::get() {
@@ -63,7 +66,14 @@ void Scheduler::printStatus() {
             std::string commandCounter = std::to_string(cpu->getProcessCommandCounter());
             std::string totalCommands = std::to_string(cpu->getProcessCommandListSize());
             std::string cpuID = std::to_string(cpu->getId());
-            std::cout << process + "\t" + "date\t" + "Core: " + cpuID + "\t" + commandCounter + " / " + totalCommands << std::endl;
+
+            auto timestamp = cpu->getProcessArrivalTime();
+            struct tm timeInfo;
+            localtime_s(&timeInfo, &timestamp);
+            char buffer[80];
+            strftime(buffer, sizeof(buffer), "(%D %r)", &timeInfo);
+
+            std::cout << process + "\t" + buffer + "\t" + "Core: " + cpuID + "\t" + commandCounter + " / " + totalCommands << std::endl;
         }
     }
 }
