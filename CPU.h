@@ -17,6 +17,7 @@ public:
     std::string getProcessName() const { return this->_process->getName(); };
     int getProcessCommandCounter() const { return this->_process->getCommandCounter(); };
     int getProcessCommandListSize() const { return this->_process->getCommandListSize(); };
+    time_t getProcessArrivalTime() const { return this->_process->getArrivalTime(); };
 
     bool isReady() const { return _ready; };
 
