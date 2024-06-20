@@ -4,6 +4,7 @@
 
 #include <memory>
 #include <queue>
+#include <vector>
 
 #include "CPU.h"
 #include "Process.h"
@@ -26,6 +27,8 @@ public:
 private:
     Scheduler();
     ~Scheduler() = default;
+
+    void run();
 
     static Scheduler* _ptr;
 
