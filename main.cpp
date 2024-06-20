@@ -9,7 +9,9 @@
 
 int main()
 {
-    Process process = Process(0, "test");
+    Process process = Process(0, "test", true);
     process.setCPUCoreID(1);
-    process.execute();
+    while (!process.hasFinished()) {
+        process.execute();
+    }
 }
