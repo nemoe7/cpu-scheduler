@@ -1,6 +1,6 @@
 #include "Scheduler.h"
-#include <thread>
-#include <chrono>
+#include <string>
+#include <iostream>
 
 
 int main()
@@ -8,13 +8,15 @@ int main()
     Scheduler::initialize();
     Scheduler* scheduler = Scheduler::get();
     scheduler->demo();
-
     scheduler->start();
-    auto start = std::chrono::steady_clock::now();
-    while (true) {
-        scheduler->printStatus();
-        std::this_thread::sleep_for(std::chrono::milliseconds(25));
-        if (std::chrono::steady_clock::now() - start > std::chrono::seconds(20))
-            break;
+
+    std::string input = "";
+    while (input != "exit") {
+        std::cout << "Enter a command: ";
+        std::getline(std::cin, input);
+        
+        if (input == "screen -ls") {
+            scheduler->printStatus();
+        }
     }
 }
