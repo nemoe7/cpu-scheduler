@@ -4,12 +4,21 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <windows.h>
+
 #include "PrintCommand.h"
 
 
 typedef std::string String;
 
 Process::Process(int pid, String name, bool filler) : _pid(pid), _name(name) {
+    const char* dirPath = "output";
+
+    DWORD attribs = GetFileAttributesA(dirPath);
+    if (attribs == INVALID_FILE_ATTRIBUTES || !(attribs & FILE_ATTRIBUTE_DIRECTORY)) {
+        CreateDirectoryA(dirPath, NULL);
+    }
+
     String filename = ".\\output\\" + this->_name + ".txt";
     std::ofstream output;
     output.open(filename, std::ios::out);
