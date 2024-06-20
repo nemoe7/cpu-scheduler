@@ -11,8 +11,7 @@
 
 typedef std::string String;
 
-void PrintCommand::execute(int core) {
-    String filename = ".\\output\\print_" + std::to_string(this->_pid) + ".txt";
+void PrintCommand::execute(int core, String filename) {
     std::ofstream output;
     output.open(filename, std::ios::out | std::ios::app);
     

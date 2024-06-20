@@ -11,7 +11,7 @@ public:
     PrintCommand(std::string message, int pid) : _message(message), _pid(pid) {};
     ~PrintCommand() = default;
 
-    void execute(int core);
+    void execute(int core, std::string output);
 
     int _pid;
     CommandType _type = PRINT;

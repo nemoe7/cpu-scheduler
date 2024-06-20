@@ -31,9 +31,8 @@ Process::Process(int pid, String name, bool filler) : _pid(pid), _name(name) {
 }
 
 void Process::execute() {
-
     if (!this->hasFinished()) {
-        this->_commandList.at(_commandCounter)->execute(this->_cpuCoreID);
+        this->_commandList.at(_commandCounter)->execute(this->_cpuCoreID, ".\\output\\" + this->_name + ".txt");
         this->_commandCounter++;
     }
 }
