@@ -11,7 +11,7 @@
 class Scheduler {
 public:
     static Scheduler* get();
-    static void initialize();
+    static void initialize(int cpuCount = 4);
     static void destroy();
 
     void addProcess(Process process);

@@ -7,7 +7,11 @@ Scheduler* Scheduler::get() {
     return _ptr;
 }
 
-void Scheduler::initialize() {
+void Scheduler::initialize(int cpuCount) {
+    _ptr = new Scheduler();
+    for (int i = 0; i < cpuCount; i++) {
+        _ptr->_cpuList.push_back(std::make_shared<CPU>());
+    }
 }
 
 void Scheduler::destroy() {
@@ -28,4 +32,7 @@ void Scheduler::demo() {
 }
 
 void Scheduler::printStatus() {
+}
+
+Scheduler::Scheduler() {
 }
