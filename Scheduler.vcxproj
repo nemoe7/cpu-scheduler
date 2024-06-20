@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CPU.cpp" />
-    <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="PrintCommand.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Process.cpp" />
