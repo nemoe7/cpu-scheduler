@@ -19,19 +19,28 @@
     <Filter Include="Source Files\Process">
       <UniqueIdentifier>{6195f7f9-97f1-4953-9e39-923284ef7f96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\CPU">
+      <UniqueIdentifier>{fd14cf7d-48c5-46fa-a9ec-2334fabd09d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scheduler">
+      <UniqueIdentifier>{d439591c-6d61-435f-8747-082623053083}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ICommand.cpp">
-      <Filter>Source Files\Command</Filter>
     </ClCompile>
     <ClCompile Include="PrintCommand.cpp">
       <Filter>Source Files\Command</Filter>
     </ClCompile>
     <ClCompile Include="Process.cpp">
       <Filter>Source Files\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Scheduler.cpp">
+      <Filter>Source Files\Scheduler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="Process.h">
       <Filter>Source Files\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU.h">
+      <Filter>Source Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Scheduler.h">
+      <Filter>Source Files\Scheduler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
