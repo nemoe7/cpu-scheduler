@@ -23,7 +23,7 @@ Process::Process(int pid, String name, bool filler) : _pid(pid), _name(name) {
         for (int i = 0; i < 100; i++) {
             this->_commandList.push_back(
                 std::make_shared<PrintCommand>(
-                    "Hello world from " + this->_name, this->_pid
+                    "Hello world from " + this->_name + "!", this->_pid
                 )
             );
         }
