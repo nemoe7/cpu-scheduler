@@ -10,7 +10,7 @@
 
 class Scheduler {
 public:
-    static std::shared_ptr<Scheduler> get();
+    static Scheduler* get();
     static void initialize();
     static void destroy();
 
@@ -27,7 +27,7 @@ private:
     Scheduler();
     ~Scheduler() = default;
 
-    static std::shared_ptr<Scheduler> _ptr;
+    static Scheduler* _ptr;
 
     std::queue<std::shared_ptr<Process>> _readyQueue;
     std::vector<std::shared_ptr<CPU>> _cpuList;

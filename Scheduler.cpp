@@ -1,7 +1,9 @@
 #include "Scheduler.h"
 
 
-std::shared_ptr<Scheduler> Scheduler::get() {
+Scheduler* Scheduler::_ptr = nullptr;
+
+Scheduler* Scheduler::get() {
     return _ptr;
 }
 
@@ -9,6 +11,7 @@ void Scheduler::initialize() {
 }
 
 void Scheduler::destroy() {
+    delete _ptr;
 }
 
 void Scheduler::addProcess(Process process) {
