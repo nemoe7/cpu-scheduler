@@ -26,6 +26,7 @@ void CPU::run() {
             this->_process->setCPUCoreID(this->_id);
             this->_process->execute();
             if (this->_process->hasFinished()) {
+                this->_process->setFinishTime();
                 this->setProcess(nullptr);
                 this->_ready = true;
             }

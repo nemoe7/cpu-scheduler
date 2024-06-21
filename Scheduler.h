@@ -34,7 +34,7 @@ private:
 
     std::queue<std::shared_ptr<Process>> _readyQueue;
     std::vector<std::shared_ptr<CPU>> _cpuList;
-
+    std::vector<std::shared_ptr<Process>> _processList;
     bool running = false;
 };
 

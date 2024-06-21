@@ -22,8 +22,10 @@ public:
     int getCommandCounter() const { return _commandCounter; };
     int getCommandListSize() const { return _commandList.size(); };
     time_t getArrivalTime() const { return _arrivalTime; };
+    time_t getFinishTime() { return _finishTime; };
 
     void setCPUCoreID(int cpuCoreID);
+    void setFinishTime() { this->_finishTime = time(nullptr); };
 
 private:
     int _pid;
@@ -32,6 +34,7 @@ private:
     int _commandCounter = 0;
     int _cpuCoreID = -1;
     time_t _arrivalTime = time(nullptr);
+    time_t _finishTime = time(nullptr);
 };
 
 #endif // !PROCESS_H
