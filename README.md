@@ -1,6 +1,6 @@
 # CPU Scheduler
 
-Course project.
+Course project for **CSOPESY**.
 
 A CPU scheduling simulator implemented in C++.
 
